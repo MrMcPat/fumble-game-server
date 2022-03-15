@@ -22,6 +22,4 @@ if ActiveRecord::Base.connection.migration_context.needs_migration?
 end
 
 use Rack::MethodOverride
-use AuthorsController
-use BooksController
 run ApplicationController
