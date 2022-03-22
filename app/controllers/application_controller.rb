@@ -31,7 +31,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/player_scores" do
-    response['Access-Control-Allow-Origin'] = '*'
     player_score = PlayerScore.create(
       name: params[:name],
       high_score: params[:high_score],
@@ -44,7 +43,6 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/player_scores/:id' do
-    response['Access-Control-Allow-Origin'] = '*'
     player_score = PlayerScore.find(params[:id])
     player_score.destroy
     player_score.to_json
