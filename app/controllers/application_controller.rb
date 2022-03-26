@@ -31,6 +31,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/player_scores" do
+    response['Access-Control-Allow-Origin'] = '*'
     player_score = PlayerScore.create(
       name: params[:name],
       high_score: params[:high_score],
