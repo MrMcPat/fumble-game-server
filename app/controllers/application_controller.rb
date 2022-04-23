@@ -2,36 +2,36 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   get "/" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     "Hello world!"
   end
 
   get "/player_scores" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     player_scores = PlayerScore.all.order(id: :desc)
     player_scores.to_json(include: :game_mode)
   end
 
   get "/player_scores/:id" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     player_scores = PlayerScore.find(params[:id])
     player.to_json(include: :game_mode)
   end
 
   get "/game_modes/game_mode_popularity" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     game_modes = GameMode.game_mode_popularity
     game_modes.to_json
   end
 
   get "/game_modes/ranking" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     game_modes = GameMode.ranking
     game_modes.to_json
   end
 
   post "/player_scores" do
-    response['Access-Control-Allow-Origin'] = '*'
+    # response['Access-Control-Allow-Origin'] = '*'
     player_score = PlayerScore.create(
       name: params[:name],
       high_score: params[:high_score],
