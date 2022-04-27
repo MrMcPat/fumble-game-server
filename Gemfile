@@ -11,7 +11,7 @@ ruby "2.7.4"
 
 # # Rack middleware. Used specifically for parsing the request body into params.
 # # https://github.com/rack/rack-contrib
-# gem "rack-contrib", "~> 2.3"
+gem "rack-contrib", "~> 2.3"
 
 # # More Rack middleware! Used to handle CORS requests
 # # https://github.com/cyu/rack-cors
